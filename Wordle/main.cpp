@@ -212,9 +212,9 @@ int main(){
 			cout<<"#";
 		}
 		for (int j=player.streak[i]*20.0/player.win;j<20;j++){
-			setFontColor(15,0);
 			cout<<" ";
 		}
+		setFontColor(15,0);
 		cout<<"| "<<round(player.streak[i]*1000.0/player.win)/10<<"%\n";
 	} 
 	system("pause>nul");
