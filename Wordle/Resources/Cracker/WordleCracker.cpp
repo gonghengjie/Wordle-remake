@@ -1,7 +1,12 @@
 #include<bits/stdc++.h>
+#include<windows.h>
 using namespace std;
 string answers[100010],answers2[100010],str1,str2;
 int answercnt,answercnt2;
+void setFontColor(int ForgC,int BackC){
+	WORD wColor=((BackC&0x0F)<<4)+(ForgC&0x0F);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),wColor);
+}
 int main(){
 	answercnt=answercnt2=0;
 	cout<<" __    __              _ _          ___               _             \n/ / /\\ \\ \\___  _ __ __| | | ___    / __\\ __ __ _  ___| | _____ _ __ \n\\ \\/  \\/ / _ \\| '__/ _` | |/ _ \\  / / | '__/ _` |/ __| |/ / _ \\ '__|\n \\  /\\  / (_) | | | (_| | |  __/ / /__| | | (_| | (__|   <  __/ |   \n  \\/  \\/ \\___/|_|  \\__,_|_|\\___| \\____/_|  \\__,_|\\___|_|\\_\\___|_|   \n";
@@ -16,6 +21,15 @@ int main(){
 			system("cls");
 			main();
 			return 0;
+		}
+		if (str1=="print"){
+			setFontColor(14,0);
+			for (int i=1;i<=min(answercnt,10);i++){
+				cout<<answers[i]<<"\n";
+			}
+			if (answercnt>10) cout<<"...\n";
+			setFontColor(7,0);
+			continue;
 		}
 		cin>>str2;
 		answercnt2=0;
